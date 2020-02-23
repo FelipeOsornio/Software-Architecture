@@ -1,7 +1,7 @@
 # Template Method Pattern
 # Date: 24-Feb-2020
 # Authors:
-#          A01377154 Felipe Osornio 
+#          A01377154 Felipe Osornio
 
 # The source code models a student object and
 # implements different methods about the object.
@@ -10,7 +10,7 @@
 class Student
 
   include Enumerable
-  # Note: This class does not support the max, min, 
+  # Note: This class does not support the max, min,
   # or sort methods.
 
   # Init the constructor throughout their parameters.
@@ -27,11 +27,11 @@ class Student
 
   # Returns the grade average of the student.
   def grade_average
-    @grades.inject(:+)/@grades.size
+    @grades.inject(:+) / @grades.size
   end
 
-  # Return the id, name, the grades and the average of the student.  
-  def each &block
+  # Return the id, name, the grades and the average of the student.
+  def each(&block)
     yield @id
     yield @name
     @grades.each(&block)

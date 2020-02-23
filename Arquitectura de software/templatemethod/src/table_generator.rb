@@ -65,20 +65,13 @@ class HTMLTableGenerator < TableGenerator
     # Joins all element of the row parameter with a different table tags.
     def generate_row(row)
         @data.length != @data.index(row) + 1 ? 
-          "<tr>
-            #{(row.map {|x| "<td>#{generate_item(x)}</td>"}).join}
-          </tr>\n" :
-          "<tr>
-            #{(row.map {|x| "<td>#{generate_item(x)}</td>"}).join}
-          </tr>\n</table>\n"
+          "<tr>#{(row.map {|x| "<td>#{generate_item(x)}</td>"}).join}</tr>\n" :
+          "<tr>#{(row.map {|x| "<td>#{generate_item(x)}</td>"}).join}</tr>\n</table>\n"
     end
     
     # Returns each element of the header joined with table tags.
     def generate_header_row
-        "<table>\n
-          <tr>
-            #{(@header.map {|x| "<th>#{generate_header_item(x)}</th>"}).join}
-          </tr>\n"
+        "<table>\n<tr>#{(@header.map {|x| "<th>#{generate_header_item(x)}</th>"}).join}</tr>\n"
     end
     
 end
@@ -95,8 +88,7 @@ class AsciiDocTableGenerator < TableGenerator
     
     # Returns each element of the header joined with ASCII characters.
     def generate_header_row
-        "[options=\"header\"]\n|==========\n
-          #{(@header.map {|x| "|#{generate_header_item(x)}"}).join}\n"
+        "[options=\"header\"]\n|==========\n#{(@header.map {|x| "|#{generate_header_item(x)}"}).join}\n"
     end
 
 end
