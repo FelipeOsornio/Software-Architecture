@@ -81,7 +81,7 @@ Superclass:
 <a class='source-toggle' href='#' onclick='toggleCode(&#39;method-c-new-source&#39;); return false'>
 [show source]
 </a>
-<pre id='method-c-new-source'><span class="ruby-comment"># File src/student.rb, line 17</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">grades</span>)&#x000A;  <span class="ruby-ivar">@id</span> = <span class="ruby-identifier">id</span>&#x000A;  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>&#x000A;  <span class="ruby-ivar">@grades</span> = <span class="ruby-identifier">grades</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+<pre id='method-c-new-source'><span class="ruby-comment"># File src/student.rb, line 18</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">grades</span>)&#x000A;  <span class="ruby-ivar">@id</span> = <span class="ruby-identifier">id</span>&#x000A;  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>&#x000A;  <span class="ruby-ivar">@grades</span> = <span class="ruby-identifier">grades</span>&#x000A;<span class="ruby-keyword">end</span></pre>
 </div>
 </div>
 <h2>Public Instance methods</h2>
@@ -101,7 +101,7 @@ Superclass:
 <a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-each-source&#39;); return false'>
 [show source]
 </a>
-<pre id='method-i-each-source'><span class="ruby-comment"># File src/student.rb, line 34</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>&#x000A;  <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@id</span>&#x000A;  <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@name</span>&#x000A;  <span class="ruby-ivar">@grades</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">grade_average</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+<pre id='method-i-each-source'><span class="ruby-comment"># File src/student.rb, line 35</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@id</span>&#x000A;  <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@name</span>&#x000A;  <span class="ruby-ivar">@grades</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">grade_average</span>&#x000A;<span class="ruby-keyword">end</span></pre>
 </div>
 </div>
 <div class='method public-instance' id='method-method-i-grade_average'>
@@ -120,7 +120,7 @@ Superclass:
 <a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-grade_average-source&#39;); return false'>
 [show source]
 </a>
-<pre id='method-i-grade_average-source'><span class="ruby-comment"># File src/student.rb, line 29</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">grade_average</span>&#x000A;  <span class="ruby-ivar">@grades</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-value">:+</span>)<span class="ruby-operator">/</span><span class="ruby-ivar">@grades</span>.<span class="ruby-identifier">size</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+<pre id='method-i-grade_average-source'><span class="ruby-comment"># File src/student.rb, line 30</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">grade_average</span>&#x000A;  <span class="ruby-ivar">@grades</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-value">:+</span>) <span class="ruby-operator">/</span> <span class="ruby-ivar">@grades</span>.<span class="ruby-identifier">size</span>&#x000A;<span class="ruby-keyword">end</span></pre>
 </div>
 </div>
 <div class='method public-instance' id='method-method-i-inspect'>
@@ -139,7 +139,7 @@ Superclass:
 <a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-inspect-source&#39;); return false'>
 [show source]
 </a>
-<pre id='method-i-inspect-source'><span class="ruby-comment"># File src/student.rb, line 24</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>&#x000A;  <span class="ruby-node">&quot;Student(#{@id}, #{@name.inspect})&quot;</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+<pre id='method-i-inspect-source'><span class="ruby-comment"># File src/student.rb, line 25</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>&#x000A;  <span class="ruby-node">&quot;Student(#{@id}, #{@name.inspect})&quot;</span>&#x000A;<span class="ruby-keyword">end</span></pre>
 </div>
 </div>
 </div>

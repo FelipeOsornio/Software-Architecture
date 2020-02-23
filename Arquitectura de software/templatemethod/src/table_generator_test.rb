@@ -1,9 +1,10 @@
 # Template Method Pattern
 # Date: 24-Feb-2020
 # Authors:
-#          A01377154 Felipe Osornio 
+#          A01377154 Felipe Osornio
+#          A01378838 Eric Gómez
 
-# The source code tests the table generator 
+# The source code tests the table generator
 # concrate classes
 
 require 'minitest/autorun'

@@ -1,7 +1,8 @@
 # Template Method Pattern
 # Date: 24-Feb-2020
 # Authors:
-#          A01377154 Felipe Osornio 
+#          A01377154 Felipe Osornio
+#          A01378838 Eric Gómez
 
 
 # The source code contained in this file demonstrates how to
@@ -61,19 +62,19 @@ end
 
 # A class that models a HTML table.
 class HTMLTableGenerator < TableGenerator
-    
+
     # Joins all element of the row parameter with a different table tags.
     def generate_row(row)
-        @data.length != @data.index(row) + 1 ? 
+        @data.length != @data.index(row) + 1 ?
           "<tr>#{(row.map {|x| "<td>#{generate_item(x)}</td>"}).join}</tr>\n" :
           "<tr>#{(row.map {|x| "<td>#{generate_item(x)}</td>"}).join}</tr>\n</table>\n"
     end
-    
+
     # Returns each element of the header joined with table tags.
     def generate_header_row
         "<table>\n<tr>#{(@header.map {|x| "<th>#{generate_header_item(x)}</th>"}).join}</tr>\n"
     end
-    
+
 end
 
 # A class that models an ASCII doc table.
@@ -81,11 +82,11 @@ class AsciiDocTableGenerator < TableGenerator
 
     # Joins all element of the row parameter with a different ASCII characters.
     def generate_row(row)
-        @data.length != @data.index(row) + 1 ? 
+        @data.length != @data.index(row) + 1 ?
           "#{(row.map {|x| "|#{generate_item(x)}"}).join}\n" :
           "#{(row.map {|x| "|#{generate_item(x)}"}).join}\n|==========\n"
     end
-    
+
     # Returns each element of the header joined with ASCII characters.
     def generate_header_row
         "[options=\"header\"]\n|==========\n#{(@header.map {|x| "|#{generate_header_item(x)}"}).join}\n"

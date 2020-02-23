@@ -77,7 +77,7 @@ Superclass:
 <a class='source-toggle' href='#' onclick='toggleCode(&#39;method-c-new-source&#39;); return false'>
 [show source]
 </a>
-<pre id='method-c-new-source'><span class="ruby-comment"># File src/table_generator.rb, line 15</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">header</span>, <span class="ruby-identifier">data</span>)&#x000A;  <span class="ruby-ivar">@header</span> = <span class="ruby-identifier">header</span>&#x000A;  <span class="ruby-ivar">@data</span> = <span class="ruby-identifier">data</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+<pre id='method-c-new-source'><span class="ruby-comment"># File src/table_generator.rb, line 16</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">header</span>, <span class="ruby-identifier">data</span>)&#x000A;  <span class="ruby-ivar">@header</span> = <span class="ruby-identifier">header</span>&#x000A;  <span class="ruby-ivar">@data</span> = <span class="ruby-identifier">data</span>&#x000A;<span class="ruby-keyword">end</span></pre>
 </div>
 </div>
 <h2>Public Instance methods</h2>
@@ -97,7 +97,7 @@ Superclass:
 <a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-generate-source&#39;); return false'>
 [show source]
 </a>
-<pre id='method-i-generate-source'><span class="ruby-comment"># File src/table_generator.rb, line 21</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate</span>&#x000A;  <span class="ruby-identifier">generate_header_row</span> <span class="ruby-operator">+</span> (<span class="ruby-ivar">@data</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">generate_row</span>(<span class="ruby-identifier">x</span>)}).<span class="ruby-identifier">join</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+<pre id='method-i-generate-source'><span class="ruby-comment"># File src/table_generator.rb, line 22</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate</span>&#x000A;  <span class="ruby-identifier">generate_header_row</span> <span class="ruby-operator">+</span> (<span class="ruby-ivar">@data</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">generate_row</span>(<span class="ruby-identifier">x</span>)}).<span class="ruby-identifier">join</span>&#x000A;<span class="ruby-keyword">end</span></pre>
 </div>
 </div>
 <div class='method public-instance' id='method-method-i-generate_header_item'>
@@ -116,7 +116,7 @@ Superclass:
 <a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-generate_header_item-source&#39;); return false'>
 [show source]
 </a>
-<pre id='method-i-generate_header_item-source'><span class="ruby-comment"># File src/table_generator.rb, line 41</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_header_item</span>(<span class="ruby-identifier">item</span>)&#x000A;  <span class="ruby-identifier">item</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+<pre id='method-i-generate_header_item-source'><span class="ruby-comment"># File src/table_generator.rb, line 42</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_header_item</span>(<span class="ruby-identifier">item</span>)&#x000A;  <span class="ruby-identifier">item</span>&#x000A;<span class="ruby-keyword">end</span></pre>
 </div>
 </div>
 <div class='method public-instance' id='method-method-i-generate_header_row'>
@@ -135,7 +135,7 @@ Superclass:
 <a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-generate_header_row-source&#39;); return false'>
 [show source]
 </a>
-<pre id='method-i-generate_header_row-source'><span class="ruby-comment"># File src/table_generator.rb, line 26</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_header_row</span>&#x000A;  (<span class="ruby-ivar">@header</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">generate_header_item</span>(<span class="ruby-identifier">x</span>)}).<span class="ruby-identifier">join</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+<pre id='method-i-generate_header_row-source'><span class="ruby-comment"># File src/table_generator.rb, line 27</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_header_row</span>&#x000A;  (<span class="ruby-ivar">@header</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">generate_header_item</span>(<span class="ruby-identifier">x</span>)}).<span class="ruby-identifier">join</span>&#x000A;<span class="ruby-keyword">end</span></pre>
 </div>
 </div>
 <div class='method public-instance' id='method-method-i-generate_item'>
@@ -154,7 +154,7 @@ Superclass:
 <a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-generate_item-source&#39;); return false'>
 [show source]
 </a>
-<pre id='method-i-generate_item-source'><span class="ruby-comment"># File src/table_generator.rb, line 31</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_item</span>(<span class="ruby-identifier">item</span>)&#x000A;  <span class="ruby-identifier">item</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+<pre id='method-i-generate_item-source'><span class="ruby-comment"># File src/table_generator.rb, line 32</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_item</span>(<span class="ruby-identifier">item</span>)&#x000A;  <span class="ruby-identifier">item</span>&#x000A;<span class="ruby-keyword">end</span></pre>
 </div>
 </div>
 <div class='method public-instance' id='method-method-i-generate_row'>
@@ -173,7 +173,7 @@ Superclass:
 <a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-generate_row-source&#39;); return false'>
 [show source]
 </a>
-<pre id='method-i-generate_row-source'><span class="ruby-comment"># File src/table_generator.rb, line 36</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_row</span>(<span class="ruby-identifier">row</span>)&#x000A;  (<span class="ruby-identifier">row</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">generate_item</span>(<span class="ruby-identifier">x</span>)}).<span class="ruby-identifier">join</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+<pre id='method-i-generate_row-source'><span class="ruby-comment"># File src/table_generator.rb, line 37</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_row</span>(<span class="ruby-identifier">row</span>)&#x000A;  (<span class="ruby-identifier">row</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">generate_item</span>(<span class="ruby-identifier">x</span>)}).<span class="ruby-identifier">join</span>&#x000A;<span class="ruby-keyword">end</span></pre>
 </div>
 </div>
 </div>

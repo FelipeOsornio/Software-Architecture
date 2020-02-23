@@ -8,13 +8,14 @@ Estado de México.
 == Authors
 
 * *A01377154* <em>Felipe Osornio</em>
+* *A01377154* <em>Eric Gómez</em>
 
 == Overview
 
-The <b>template method</b> is probably the simplest GoF pattern. The general 
-idea of this pattern is to build an abstract base class that contains a template 
-method. That method is responsible for processing all information that could be 
-vary. 
+The <b>template method</b> is probably the simplest GoF pattern. The general
+idea of this pattern is to build an abstract base class that contains a template
+method. That method is responsible for processing all information that could be
+vary.
 
 The UML diagram for this programming activity is as follows:
 
@@ -24,7 +25,7 @@ To test the program, inside the +src+ folder type the following
 instruction at the command line:
 
     ruby -I . -w table_generator_test.rb
-    
+
 == References
 
 - \R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley, 2007.
