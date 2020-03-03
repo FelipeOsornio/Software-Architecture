@@ -49,8 +49,8 @@ class Twitter
     end
 
     #Write a Tweet
-    def tweet(tweetMsg)
-        notify_followers(self, tweetMsg)
+    def tweet(newTweet)
+        notify_followers(self, newTweet)
     end
 
     #Prints a tweet notification
