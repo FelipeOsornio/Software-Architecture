@@ -10,18 +10,22 @@ require 'minitest/autorun'
 require 'stringio'
 require 'twitter'
 
+# This class tests that the Twitter class works correctly.
 class TwitterTest < Minitest::Test
 
+  # Sets up the input/output variables.
   def setup
     @out = StringIO.new
     @old_stdout = $stdout
     $stdout = @out
   end
 
+  # Replaces the current value of stdout.
   def teardown
     $stdout = @old_stdout
   end
 
+  # Executes the first test of the Twitter class.
   def test_twitter_alices_adventures_in_wonderland
     a = Twitter.new('Alice')
     k = Twitter.new('King')
@@ -56,6 +60,7 @@ class TwitterTest < Minitest::Test
       @out.string
   end
 
+  # Executes the second test of the Twitter class.
   def test_twitter_star_wars
     y = Twitter.new('Yoda')
     o = Twitter.new('Obi-Wan Kenobi')
