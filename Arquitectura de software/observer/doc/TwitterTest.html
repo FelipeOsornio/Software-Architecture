@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TwitterTest - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Minitest::Test
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-setup">#setup</a>
+    
+    <li ><a href="#method-i-teardown">#teardown</a>
+    
+    <li ><a href="#method-i-test_twitter_alices_adventures_in_wonderland">#test_twitter_alices_adventures_in_wonderland</a>
+    
+    <li ><a href="#method-i-test_twitter_star_wars">#test_twitter_star_wars</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TwitterTest">
+  <h1 id="class-TwitterTest" class="class">
+    class TwitterTest
+  </h1>
+
+  <section class="description">
+    
+<p>This class tests that the <a href="Twitter.html"><code>Twitter</code></a> class works correctly.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-setup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets up the input/output variables.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="setup-source">
+            <pre><span class="ruby-comment"># File src/twitter_test.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+  <span class="ruby-ivar">@out</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@old_stdout</span> = <span class="ruby-identifier">$stdout</span>
+  <span class="ruby-identifier">$stdout</span> = <span class="ruby-ivar">@out</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-teardown" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">teardown</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Replaces the current value of stdout.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="teardown-source">
+            <pre><span class="ruby-comment"># File src/twitter_test.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teardown</span>
+  <span class="ruby-identifier">$stdout</span> = <span class="ruby-ivar">@old_stdout</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_twitter_alices_adventures_in_wonderland" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_twitter_alices_adventures_in_wonderland</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Executes the first test of the <a href="Twitter.html"><code>Twitter</code></a> class.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="test_twitter_alices_adventures_in_wonderland-source">
+            <pre><span class="ruby-comment"># File src/twitter_test.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_twitter_alices_adventures_in_wonderland</span>
+  <span class="ruby-identifier">a</span> = <span class="ruby-constant">Twitter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Alice&#39;</span>)
+  <span class="ruby-identifier">k</span> = <span class="ruby-constant">Twitter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;King&#39;</span>)
+  <span class="ruby-identifier">q</span> = <span class="ruby-constant">Twitter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Queen&#39;</span>)
+  <span class="ruby-identifier">h</span> = <span class="ruby-constant">Twitter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Mad Hatter&#39;</span>)
+  <span class="ruby-identifier">c</span> = <span class="ruby-constant">Twitter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Cheshire Cat&#39;</span>)
+
+  <span class="ruby-identifier">a</span>.<span class="ruby-identifier">follow</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-identifier">k</span>.<span class="ruby-identifier">follow</span>(<span class="ruby-identifier">q</span>)
+  <span class="ruby-identifier">h</span>.<span class="ruby-identifier">follow</span>(<span class="ruby-identifier">a</span>).<span class="ruby-identifier">follow</span>(<span class="ruby-identifier">q</span>).<span class="ruby-identifier">follow</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">follow</span>(<span class="ruby-identifier">q</span>)
+
+  <span class="ruby-identifier">a</span>.<span class="ruby-identifier">tweet</span> <span class="ruby-string">&quot;What a strange world we live in.&quot;</span>
+  <span class="ruby-identifier">k</span>.<span class="ruby-identifier">tweet</span> <span class="ruby-string">&quot;Begin at the beginning, and go on till you come &quot;</span>  \
+    <span class="ruby-string">&quot;to the end: then stop.&quot;</span>
+  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">tweet</span> <span class="ruby-string">&quot;Off with their heads!&quot;</span>
+  <span class="ruby-identifier">c</span>.<span class="ruby-identifier">tweet</span> <span class="ruby-string">&quot;We&#39;re all mad here.&quot;</span>
+
+  <span class="ruby-identifier">assert_equal</span> \
+    <span class="ruby-string">&quot;Mad Hatter received a tweet from Alice: What a strange &quot;</span> \
+      <span class="ruby-string">&quot;world we live in.\n&quot;</span>                                   \
+    <span class="ruby-string">&quot;King received a tweet from Queen: Off with their &quot;</span>       \
+      <span class="ruby-string">&quot;heads!\n&quot;</span>                                              \
+    <span class="ruby-string">&quot;Mad Hatter received a tweet from Queen: Off with their &quot;</span> \
+      <span class="ruby-string">&quot;heads!\n&quot;</span>                                              \
+    <span class="ruby-string">&quot;Queen received a tweet from Queen: Off with their &quot;</span>      \
+      <span class="ruby-string">&quot;heads!\n&quot;</span>                                              \
+    <span class="ruby-string">&quot;Alice received a tweet from Cheshire Cat: We&#39;re all &quot;</span>    \
+      <span class="ruby-string">&quot;mad here.\n&quot;</span>                                           \
+    <span class="ruby-string">&quot;Mad Hatter received a tweet from Cheshire Cat: &quot;</span>         \
+      <span class="ruby-string">&quot;We&#39;re all mad here.\n&quot;</span>,                                \
+    <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">string</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_twitter_star_wars" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_twitter_star_wars</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Executes the second test of the <a href="Twitter.html"><code>Twitter</code></a> class.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="test_twitter_star_wars-source">
+            <pre><span class="ruby-comment"># File src/twitter_test.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_twitter_star_wars</span>
+  <span class="ruby-identifier">y</span> = <span class="ruby-constant">Twitter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Yoda&#39;</span>)
+  <span class="ruby-identifier">o</span> = <span class="ruby-constant">Twitter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Obi-Wan Kenobi&#39;</span>)
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">Twitter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Darth Vader&#39;</span>)
+  <span class="ruby-identifier">p</span> = <span class="ruby-constant">Twitter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Padmé Amidala&#39;</span>)
+
+  <span class="ruby-identifier">p</span>.<span class="ruby-identifier">follow</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">follow</span>(<span class="ruby-identifier">p</span>).<span class="ruby-identifier">follow</span>(<span class="ruby-identifier">y</span>).<span class="ruby-identifier">follow</span>(<span class="ruby-identifier">v</span>)
+
+  <span class="ruby-identifier">y</span>.<span class="ruby-identifier">tweet</span> <span class="ruby-string">&quot;Do or do not. There is no try.&quot;</span>
+  <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tweet</span> <span class="ruby-string">&quot;The Force will be with you, always.&quot;</span>
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">tweet</span> <span class="ruby-string">&quot;I find your lack of faith disturbing.&quot;</span>
+  <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tweet</span> <span class="ruby-string">&quot;In my experience, there&#39;s no such thing as luck.&quot;</span>
+  <span class="ruby-identifier">y</span>.<span class="ruby-identifier">tweet</span> <span class="ruby-string">&quot;Truly wonderful, the mind of a child is.&quot;</span>
+  <span class="ruby-identifier">p</span>.<span class="ruby-identifier">tweet</span> <span class="ruby-string">&quot;I will not condone a course of action that will &quot;</span>  \
+    <span class="ruby-string">&quot;lead us to war.&quot;</span>
+
+  <span class="ruby-identifier">assert_equal</span> \
+    <span class="ruby-string">&quot;Darth Vader received a tweet from Yoda: Do or do not. &quot;</span>  \
+      <span class="ruby-string">&quot;There is no try.\n&quot;</span>                                    \
+    <span class="ruby-string">&quot;Padmé Amidala received a tweet from Darth Vader: I find &quot;</span>\
+      <span class="ruby-string">&quot;your lack of faith disturbing.\n&quot;</span>                      \
+    <span class="ruby-string">&quot;Darth Vader received a tweet from Darth Vader: I find &quot;</span>  \
+      <span class="ruby-string">&quot;your lack of faith disturbing.\n&quot;</span>                      \
+    <span class="ruby-string">&quot;Darth Vader received a tweet from Yoda: Truly wonderful,&quot;</span>\
+      <span class="ruby-string">&quot; the mind of a child is.\n&quot;</span>                            \
+    <span class="ruby-string">&quot;Darth Vader received a tweet from Padmé Amidala: I will &quot;</span>\
+      <span class="ruby-string">&quot;not condone a course of action that will lead us to &quot;</span>  \
+      <span class="ruby-string">&quot;war.\n&quot;</span>,                                               \
+    <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">string</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
