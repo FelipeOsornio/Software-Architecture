@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>User</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='class' id='wrapper'>
+<div class='header'>
+<h1 class='name'><span class='type'>module</span>
+User
+</h1>
+<ol class='paths'>
+<li>
+<a href="../files/src/twitter_rb.html">src/twitter.rb</a>
+</li>
+</ol>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'>
+<p>Observer module that includes the <a href="Twitter.html"><code>Twitter</code></a> class.</p>
+</div>
+<div id='method-list'>
+<h2>Methods</h2>
+<h3>Public Class</h3>
+<ol>
+<li><a href="#method-c-new">new</a></li>
+</ol>
+<h3>Public Instance</h3>
+<ol>
+<li><a href="#method-i-followUser">followUser</a></li>
+<li><a href="#method-i-notify_followers">notify_followers</a></li>
+</ol>
+</div>
+<div id='context'>
+</div>
+<div id='section'>
+<div id='methods'>
+<h2>Public Class methods</h2>
+<div class='method public-class' id='method-method-c-new'>
+<a name='method-c-new'></a>
+<div class='synopsis'>
+<span class='name'>new</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Initialize for the list of followers of an user.</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-c-new-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-c-new-source'><span class="ruby-comment"># File src/twitter.rb, line 14</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>&#x000A;    <span class="ruby-ivar">@followersList</span>=[]&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<h2>Public Instance methods</h2>
+<div class='method public-instance' id='method-method-i-followUser'>
+<a name='method-i-followUser'></a>
+<div class='synopsis'>
+<span class='name'>followUser</span>
+<span class='arguments'>(userToFollow)</span>
+
+</div>
+<div class='description'>
+
+<p>Adds and new user to follow list</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-followUser-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-followUser-source'><span class="ruby-comment"># File src/twitter.rb, line 19</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">followUser</span>(<span class="ruby-identifier">userToFollow</span>)&#x000A;    <span class="ruby-ivar">@followersList</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">userToFollow</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-notify_followers'>
+<a name='method-i-notify_followers'></a>
+<div class='synopsis'>
+<span class='name'>notify_followers</span>
+<span class='arguments'>(user, tweet)</span>
+
+</div>
+<div class='description'>
+
+<p>notify every follower the tweet</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-notify_followers-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-notify_followers-source'><span class="ruby-comment"># File src/twitter.rb, line 24</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">notify_followers</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">tweet</span>)&#x000A;    <span class="ruby-ivar">@followersList</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">follower</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-identifier">follower</span>.<span class="ruby-identifier">notify</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">tweet</span>)&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>
