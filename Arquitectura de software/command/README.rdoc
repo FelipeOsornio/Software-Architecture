@@ -25,7 +25,7 @@ rdoc-image:img/observer_pattern_uml.png
 To test the program, inside the +src+ folder type the following
 instruction at the command line:
 
-    ruby -I . -w twitter_test.rb
+    ruby -I . -w control_test.rb
 
 == References
 
