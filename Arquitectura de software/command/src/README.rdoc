@@ -1,0 +1,28 @@
+= Command Pattern
+
+This documentation was developed as part of a programming
+activity for the <em>Software Design and Architecture</em>
+course (_TC3049_), at the Tecnológico de Monterrey, Campus
+Estado de México.
+
+== Authors
+
+* *A01377154* <em>Felipe Osornio</em>
+* *A01378838* <em>Eric Gómez</em>
+
+== Overview
+
+The <b>command pattern</b>
+
+The UML diagram for this programming activity is as follows:
+
+rdoc-image:img/observer_pattern_uml.png
+
+To test the program, inside the +src+ folder type the following
+instruction at the command line:
+
+    ruby -I . -w twitter_test.rb
+
+== References
+
+- \R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley, 2007.
