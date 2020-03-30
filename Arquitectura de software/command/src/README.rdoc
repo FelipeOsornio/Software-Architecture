@@ -12,7 +12,11 @@ Estado de México.
 
 == Overview
 
-The <b>command pattern</b>
+The <b>command pattern</b> encapsulates methods invocation.
+This pattern crystallizes pieces of computation of the objects and
+when invoking is executed the computation doesn't need to worry
+about how to do things. Simplely, it uses the crystallized method to
+get it done.
 
 The UML diagram for this programming activity is as follows:
 
