@@ -30,3 +30,4 @@ instruction at the command line:
 == References
 
 - \R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley, 2007.
+- \E. Freeman, E. Freeman, B. Bates, & K Sierra. <em>Head First Design Patterns.</em>  O'Reilly, 2004.
