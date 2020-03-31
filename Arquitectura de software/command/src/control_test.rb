@@ -10,9 +10,10 @@ require 'minitest/autorun'
 require 'stringio'
 require 'control'
 
-# Class that tests commands pattern.
+# This class tests that the Twitter class works correctly.
 class ControlTest < Minitest::Test
 
+  # Sets up the variables to print the text.
   def setup
     set_stdout
     @rc = RemoteControlWithUndo.new
@@ -20,20 +21,24 @@ class ControlTest < Minitest::Test
     set_fan
   end
 
+  # Resets to output.
   def teardown
     reset_stdout
   end
 
+  # Sets up the input/output variables.
   def set_stdout
     @out = StringIO.new
     @old_stdout = $stdout
     $stdout = @out
   end
 
+  # Replaces the current value of stdout.
   def reset_stdout
     $stdout = @old_stdout
   end
 
+  # Defines the light object with on/off actions and insert it in controller.
   def set_light
     light = Light.new("Living Room")
     light_on = LightOnCommand.new(light)
@@ -41,6 +46,7 @@ class ControlTest < Minitest::Test
     @rc.set_command(0, light_on, light_off)
   end
 
+  # Defines the fan object with speed actions and insert it in controller.
   def set_fan
     fan = CeilingFan.new("Living Room")
     fan_medium = CeilingFanMediumCommand.new(fan)
@@ -50,6 +56,7 @@ class ControlTest < Minitest::Test
     @rc.set_command(2, fan_high, fan_off)
   end
 
+  # Tests light object and its correct behaviour.
   def test_light
     @rc.on_button_was_pushed(0)
     @rc.off_button_was_pushed(0)
@@ -86,6 +93,7 @@ class ControlTest < Minitest::Test
       "Light is off\n", @out.string
   end
 
+  # Tests fan object and its correct behaviour.
   def test_fan
     @rc.on_button_was_pushed(1)
     @rc.off_button_was_pushed(1)
@@ -118,7 +126,6 @@ class ControlTest < Minitest::Test
       "[slot 6] NoCommand  NoCommand\n"                         \
       "[undo] CeilingFanHighCommand\n\n"                        \
       "Living Room ceiling fan is on medium\n", @out.string
-
   end
 
 end
