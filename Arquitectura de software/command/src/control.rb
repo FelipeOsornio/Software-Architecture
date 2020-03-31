@@ -9,7 +9,7 @@
 #This class represents the abstract model of a Remote Control with undo.
 class RemoteControlWithUndo
 
-  # Initalizes the 2 arrays that stores 7 on/off commands and the undo command
+  # Initalizes the 2 arrays that stores 7 on/off commands and the undo command.
   def initialize
     @on_commands = []
     @off_commands = []
@@ -21,19 +21,19 @@ class RemoteControlWithUndo
     @undo_command = no_command
   end
 
-  # Sets the on/off commands in a given slot
+  # Sets the on/off commands in a given slot.
   def set_command(slot, on_command, off_command)
     @on_commands[slot] = on_command
     @off_commands[slot] = off_command
   end
 
-  # Listen and executes the on command of a given slot
+  # Listen and executes the on command of a given slot.
   def on_button_was_pushed(slot)
     @on_commands[slot].execute
     @undo_command = @on_commands[slot]
   end
 
-  # Listen and executes the off command of a given slot
+  # Listen and executes the off command of a given slot.
   def off_button_was_pushed(slot)
     @off_commands[slot].execute
     @undo_command = @off_commands[slot]
@@ -62,40 +62,40 @@ end
 # Represents the abstract model of a No Command class.
 class NoCommand
 
-  # represents an empty execute method
+  # represents an empty execute method.
   def execute
   end
 
-  # represents an empty undo method
+  # represents an empty undo method.
   def undo
   end
 
 end
 
-# class that represents the object Light
+# class that represents the object Light.
 class Light
 
   attr_reader :level
 
-  # Initializes the light location and it's level
+  # Initializes the light location and it's level.
   def initialize(location)
     @location = location
     @level = 0
   end
 
-  # Sets the light ON
+  # Sets the light ON.
   def on
     @level = 100
     puts "Light is on"
   end
 
-  # Sets the light OFF
+  # Sets the light OFF.
   def off
     @level = 0
     puts "Light is off"
   end
 
-  # Sets a custom level of light
+  # Sets a custom level of light.
   def dim(level)
     @level = level
     if level == 0
@@ -107,7 +107,7 @@ class Light
 
 end
 
-# Class that represents the object CeilingFan
+# Class that represents the object CeilingFan.
 class CeilingFan
 
   # Access these constants from outside this class as
@@ -119,31 +119,31 @@ class CeilingFan
 
   attr_reader :speed
 
-  # Initializes the location an speed of the CeilingFan
+  # Initializes the location an speed of the CeilingFan.
   def initialize(location)
     @location = location
     @speed = OFF
   end
 
-  # Sets the high speed of the fan
+  # Sets the high speed of the fan.
   def high
     @speed = HIGH
     puts "#{@location} ceiling fan is on high"
   end
 
-  # Sets the medium speed of the fan
+  # Sets the medium speed of the fan.
   def medium
     @speed = MEDIUM
     puts "#{@location} ceiling fan is on medium"
   end
 
-  # Sets the low speed of the fan
+  # Sets the low speed of the fan.
   def low
     @speed = LOW
     puts "#{@location} ceiling fan is on low"
   end
 
-  # Turns OFF the fan
+  # Turns OFF the fan.
   def off
     @speed = OFF
     puts "#{@location} ceiling fan is off"
@@ -151,31 +151,39 @@ class CeilingFan
 
 end
 
-# Class that defines LightOn command
+# Class that defines LightOn command.
 class LightOnCommand < Light
+
+  # Initializes light parameter.
   def initialize(light)
     @light = light
   end
 
+  # Runs light on action.
   def execute
     @light.on
   end
 
+  # Undoes the last action.
   def undo
     @light.off
   end
 end
 
-## Class that defines LightOff command
+# Class that defines LightOff command
 class LightOffCommand < Light
+
+  # Initializes light parameter.
   def initialize(light)
     @light = light
   end
 
+  # Runs light on action.
   def execute
     @light.off
   end
 
+  # Undoes the last action.
   def undo
     @light.on
   end
@@ -190,13 +198,13 @@ class CeilingFanHighCommand < CeilingFan
     @last_speed = nil
   end
 
-  # Assign fan speed to last speed and its own class speed
+  # Assigns fan speed to last speed and its own class speed.
   def execute
     @last_speed = @fan.speed
     @fan.high
   end
 
-  # Undoes
+  # Returns the speed in accordance to the last speed.
   def undo
     @last_speed == CeilingFan::HIGH ? @fan.high :
         @last_speed == CeilingFan::MEDIUM ? @fan.medium :
@@ -206,16 +214,20 @@ end
 
 # Class that defines CeilingFanMedium command
 class CeilingFanMediumCommand < CeilingFan
+
+  # Initializes fan and last speed parameters.
   def initialize(fan)
     @fan = fan
     @last_speed = nil
   end
 
+  # Assigns fan speed to last speed and its own class speed.
   def execute
     @last_speed = @fan.speed
     @fan.medium
   end
 
+  # Returns the speed in accordance to the last speed.
   def undo
     @last_speed == CeilingFan::HIGH ? @fan.high :
         @last_speed == CeilingFan::MEDIUM ? @fan.medium :
@@ -225,16 +237,20 @@ end
 
 # Class that defines CeilingFanOff command
 class CeilingFanOffCommand < CeilingFan
+
+  # Initializes fan and last speed parameters.
   def initialize(fan)
     @fan = fan
     @last_speed = nil
   end
 
+  # Assigns fan speed to last speed and its own class speed.
   def execute
     @last_speed = @fan.speed
     @fan.off
   end
 
+  # Returns the speed in accordance to the last speed.
   def undo
     @last_speed == CeilingFan::HIGH ? @fan.high :
         @last_speed == CeilingFan::MEDIUM ? @fan.medium :

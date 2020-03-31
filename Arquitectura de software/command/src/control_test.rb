@@ -10,6 +10,7 @@ require 'minitest/autorun'
 require 'stringio'
 require 'control'
 
+# Class that tests commands pattern.
 class ControlTest < Minitest::Test
 
   def setup
