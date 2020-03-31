@@ -117,6 +117,7 @@ class ControlTest < Minitest::Test
       "[slot 6] NoCommand  NoCommand\n"                         \
       "[undo] CeilingFanHighCommand\n\n"                        \
       "Living Room ceiling fan is on medium\n", @out.string
+
   end
 
 end

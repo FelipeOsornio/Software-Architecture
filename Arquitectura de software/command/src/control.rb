@@ -82,16 +82,19 @@ class Light
     @location = location
     @level = 0
   end
+
   # Sets the light ON
   def on
     @level = 100
     puts "Light is on"
   end
+
   # Sets the light OFF
   def off
     @level = 0
     puts "Light is off"
   end
+
   # Sets a custom level of light
   def dim(level)
     @level = level
@@ -109,10 +112,10 @@ class CeilingFan
 
   # Access these constants from outside this class as
   # CeilingFan::HIGH, CeilingFan::MEDIUM, and so on.
-  HIGH   = 3
+  HIGH = 3
   MEDIUM = 2
-  LOW    = 1
-  OFF    = 0
+  LOW = 1
+  OFF = 0
 
   attr_reader :speed
 
@@ -149,7 +152,7 @@ class CeilingFan
 end
 
 # Class that defines LightOn command
-class LightOnCommand
+class LightOnCommand < Light
   def initialize(light)
     @light = light
   end
@@ -164,7 +167,7 @@ class LightOnCommand
 end
 
 ## Class that defines LightOff command
-class LightOffCommand
+class LightOffCommand < Light
   def initialize(light)
     @light = light
   end
@@ -178,48 +181,63 @@ class LightOffCommand
   end
 end
 
-# Class that defines CeilingFanHigh command
-class CeilingFanHighCommand
+# Class that defines CeilingFanHigh command.
+class CeilingFanHighCommand < CeilingFan
+
+  # Initializes fan and last speed parameters.
   def initialize(fan)
     @fan = fan
+    @last_speed = nil
   end
 
+  # Assign fan speed to last speed and its own class speed
   def execute
+    @last_speed = @fan.speed
     @fan.high
   end
 
+  # Undoes
   def undo
-    @fan.off
+    @last_speed == CeilingFan::HIGH ? @fan.high :
+        @last_speed == CeilingFan::MEDIUM ? @fan.medium :
+            @last_speed == CeilingFan::LOW ? @fan.low : @fan.off
   end
 end
 
 # Class that defines CeilingFanMedium command
-class CeilingFanMediumCommand
+class CeilingFanMediumCommand < CeilingFan
   def initialize(fan)
-  @fan = fan
+    @fan = fan
+    @last_speed = nil
   end
 
   def execute
+    @last_speed = @fan.speed
     @fan.medium
   end
 
   def undo
-    @fan.off
+    @last_speed == CeilingFan::HIGH ? @fan.high :
+        @last_speed == CeilingFan::MEDIUM ? @fan.medium :
+            @last_speed == CeilingFan::LOW ? @fan.low : @fan.off
   end
 end
 
 # Class that defines CeilingFanOff command
-class CeilingFanOffCommand
+class CeilingFanOffCommand < CeilingFan
   def initialize(fan)
     @fan = fan
-    @last_state = @fan.speed
+    @last_speed = nil
   end
 
   def execute
+    @last_speed = @fan.speed
     @fan.off
   end
 
   def undo
-    @last_state == 3 ? @fan.high : @last_state == 2 ? @fan.medium : @fan.low
+    @last_speed == CeilingFan::HIGH ? @fan.high :
+        @last_speed == CeilingFan::MEDIUM ? @fan.medium :
+            @last_speed == CeilingFan::LOW ? @fan.low : @fan.off
   end
 end
