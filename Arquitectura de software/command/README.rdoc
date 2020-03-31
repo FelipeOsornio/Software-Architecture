@@ -20,7 +20,7 @@ get it done.
 
 The UML diagram for this programming activity is as follows:
 
-rdoc-image:img/observer_pattern_uml.png
+rdoc-image:img/command_pattern.png
 
 To test the program, inside the +src+ folder type the following
 instruction at the command line:
