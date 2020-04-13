@@ -19,7 +19,7 @@ that we could need.
 
 The UML diagram for this programming activity is as follows:
 
-rdoc-image:img/
+rdoc-image:img/adapter_pattern.png
 
 To test the program, inside the +src+ folder type the following
 instruction at the command line:

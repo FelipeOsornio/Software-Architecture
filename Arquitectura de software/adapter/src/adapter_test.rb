@@ -4,7 +4,7 @@
 #          A01377154 Felipe Osornio
 #          A01378838 Eric Gómez
 
-# File: adapter_test.rb 
+# File: adapter_test.rb
 
 require 'minitest/autorun'
 require 'simple_queue'
@@ -13,7 +13,7 @@ require 'queue_adapter'
 # Class that tests the QueueAdapter
 class QueueAdapterTest < Minitest::Test
 
-  # Tests queue adaptar
+  # Tests queue adapter
   def test_queue_adapter
     q = SimpleQueue.new
     qa = QueueAdapter.new(q)
