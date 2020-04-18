@@ -17,10 +17,9 @@ existing objects. It allows you to layer features atop one another. It's
 possible construct objects with the right set of capabilities that you
 need for any given situation.
 
-
 The UML diagram for this programming activity is as follows:
 
-rdoc-image:img/
+rdoc-image:img/decorator.png
 
 To test the program, inside the +src+ folder type the following
 instruction at the command line:
