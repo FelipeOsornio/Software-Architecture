@@ -4,33 +4,41 @@
 #          A01377154 Felipe Osornio
 #          A01378838 Eric Gómez
 
+# This class models a beverage object
 class Beverage
 
+  #This method initialize object with an empty description and cos
   def initialize
     @description = ''
     @cost = 0.0
   end
 
+  #Method that updates the description of the beverage
   def description(new_description)
     @description + new_description
   end
 
+  #Method that updates the cost of the beverage
   def cost(new_cost)
     @cost + new_cost
   end
 
 end
 
+#Class that models the DarkRoast beverage
 class DarkRoast < Beverage
 
+  #Method that initialize a new DarkRoast beverage
   def initialize
     @beverage = Beverage.new
   end
 
+  #Method that call the beverage description method, sending de new description
   def description
     @beverage.description('Dark Roast Coffee')
   end
 
+  #Method that ca
   def cost
     @beverage.cost(0.99)
   end
