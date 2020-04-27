@@ -35,36 +35,90 @@ class Subtraction
 end
 
 class Scissors
-  def evaluate(object)
-    @lose = false # object.class == Spock || object.class == Rock
-    @win = object.class == Paper # || object.class == Lizard
+  def self.evaluate(object)
+    @lose = object == Spock || object == Rock
+    @win = object == Paper || object == Lizard
     @win
   end
 
-  def +(object)
-    Sum.new(self, object).evaluate.class
+  def self.+(object)
+    Sum.new(self, object).evaluate
   end
 
-  def -(object)
-    Subtraction.new(self, object).evaluate.class
+  def self.-(object)
+    Subtraction.new(self, object).evaluate
   end
 end
 
 class Paper
-  def evaluate(object)
-    @lose = object.class == Scissors # || object.class == Lizard
-    @win = false # object.class == Spock || object.class == Rock
+  def self.evaluate(object)
+    @lose = object == Scissors || object == Lizard
+    @win = object == Spock || object == Rock
     @win
   end
 
-  def +(object)
-    Sum.new(self, object).evaluate.class
+  def self.+(object)
+    Sum.new(self, object).evaluate
   end
 
-  def -(object)
-    Subtraction.new(self, object).evaluate.class
+  def self.-(object)
+    Subtraction.new(self, object).evaluate
   end
 end
 
-puts Paper == (Paper.new - Scissors.new)
+class Rock
+  def self.evaluate(object)
+    @lose = object == Spock || object == Paper
+    @win = object == Scissors || object == Lizard
+    @win
+  end
+
+  def self.+(object)
+    Sum.new(self, object).evaluate
+  end
+
+  def self.-(object)
+    Subtraction.new(self, object).evaluate
+  end
+end
+
+class Lizard
+  def self.evaluate(object)
+    @lose = object == Scissors || object == Rock
+    @win = object == Spock || object == Paper
+    @win
+  end
+
+  def self.+(object)
+    Sum.new(self, object).evaluate
+  end
+
+  def self.-(object)
+    Subtraction.new(self, object).evaluate
+  end
+end
+
+class Spock
+  def self.evaluate(object)
+    @lose = object == Lizard || object == Paper
+    @win = object == Scissors || object == Rock
+    @win
+  end
+
+  def self.+(object)
+    Sum.new(self, object).evaluate
+  end
+
+  def self.-(object)
+    Subtraction.new(self, object).evaluate
+  end
+end
+
+class Show
+  def initialize
+
+  end
+end
+
+puts (Paper + Scissors)
 
