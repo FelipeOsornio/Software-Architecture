@@ -70,9 +70,9 @@ class Paper
   end
 
   def self.+(object)
-    if object == Rock
+    if object == Scissors
       puts "Scissors cut Paper (loser Paper)\n"
-    elsif object == Spock
+    elsif object == Lizard
       puts "Lizard eats Paper (loser Paper)\n"
     elsif object == Paper
       puts "Paper tie (winner Paper)\n"
@@ -100,9 +100,9 @@ class Rock
   end
 
   def self.+(object)
-    if object == Rock
+    if object == Paper
       puts "Paper covers Rock (loser Rock)\n"
-    elsif object == Scissors
+    elsif object == Spock
       puts "Spock vaporizes Rock (loser Rock)\n"
     elsif object == Rock
       puts "Rock tie (winner Rock)\n"
