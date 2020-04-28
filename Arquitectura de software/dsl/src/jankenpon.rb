@@ -131,24 +131,24 @@ class Lizard
   end
 
   def self.+(object)
-    if object == Spock
-      puts "Lizard poisons Spock (winner Lizard)\n"
-    elsif object == Paper
-      puts "Lizard eats Paper (winner Lizard)\n"
-    elsif object == Lizard
-      puts "Lizard tie (winner Lizard)\n"
-    end
-
-    Sum.new(self, object).evaluate
-  end
-
-  def self.-(object)
     if object == Scissors
       puts "Scissors decapitate Lizard (loser Lizard)\n"
     elsif object == Rock
       puts "Rock crushes Lizard (loser Lizard)\n"
     elsif object == Lizard
       puts "Lizard tie (loser Lizard)\n"
+    end
+
+    Sum.new(self, object).evaluate
+  end
+
+  def self.-(object)
+    if object == Spock
+      puts "Lizard poisons Spock (winner Lizard)\n"
+    elsif object == Paper
+      puts "Lizard eats Paper (winner Lizard)\n"
+    elsif object == Lizard
+      puts "Lizard tie (winner Lizard)\n"
     end
 
     Subtraction.new(self, object).evaluate
@@ -189,6 +189,6 @@ def show(object)
   puts "Result = #{object}\n"
 end
 
-show Spock - Lizard
+show Lizard - Spock
 
 
