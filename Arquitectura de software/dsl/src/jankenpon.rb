@@ -174,7 +174,7 @@ class Spock
 
   def self.-(object)
     if object == Paper
-      puts "Paper disproves Spock (loser Spock)\n"
+      puts "Paper disproves Spock (loser Spock)\n "
     elsif object == Lizard
       puts "Lizard poisons Spock (loser Spock)\n"
     elsif object == Spock
@@ -189,6 +189,6 @@ def show(object)
   puts "Result = #{object}\n"
 end
 
-show Lizard - Spock
+show Spock - Paper
 
 
