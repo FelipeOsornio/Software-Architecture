@@ -120,5 +120,4 @@ class Show
   end
 end
 
-puts (Paper + Scissors)
 
