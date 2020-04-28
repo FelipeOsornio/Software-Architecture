@@ -1,9 +1,22 @@
+# Domain-Specific Language Pattern
+# Date: 27-Apr-2020
+# Authors:
+#          A01377154 Felipe Osornio
+#          A01378838 Eric Gómez
+# File: jankenpon.rb
+
+# This class models the sum operation between two
+# possibilities of the game Rock-Paper-Scissors-Lizard-Spock
 class Sum
+
+  # Method that initialize the class sum receiving two items of the game
   def initialize(exp_a, exp_b)
     @exp_a = exp_a
     @exp_b = exp_b
   end
 
+  # Method that call the evaluation method of the first object
+  # and using the second one as parameter
   def evaluate
     resultAB = @exp_a.evaluate(@exp_b)
     resultBA = @exp_b.evaluate(@exp_a)
@@ -16,12 +29,18 @@ class Sum
   end
 end
 
+# This class models the subtraction operation between two
+# possibilities of the game Rock-Paper-Scissors-Lizard-Spock
 class Subtraction
+
+  # Method that initialize the class sum receiving two items of the game
   def initialize(exp_a, exp_b)
     @exp_a = exp_a
     @exp_b = exp_b
   end
 
+  # Method that call the evaluation method of the first object
+  # and using the second one as parameter
   def evaluate
     resultAB = @exp_a.evaluate(@exp_b)
     resultBA = @exp_b.evaluate(@exp_a)
@@ -34,11 +53,18 @@ class Subtraction
   end
 end
 
+# This class models in game behaviour of the Scissors game object
 class Scissors
+
+  # Method that evaluates the Scissors object respect other
+  # object passed as an argument
   def self.evaluate(object)
     object == Paper || object == Lizard
   end
 
+  # Method that defines the output string of the sum operation depending
+  # on the object that receives as argument, and then executes the the sum
+  # interpreter operation.
   def self.+(object)
     if object == Spock
       puts "Spock smashes Scissors (loser Scissors)\n"
@@ -47,10 +73,12 @@ class Scissors
     elsif object == Scissors
       puts "Scissors tie (winner Scissors)\n"
     end
-
     Sum.new(self, object).evaluate
   end
 
+  # Method that defines the output string of the subtraction operation depending
+  # on the object that receives as argument, and then executes the the subtraction
+  # interpreter operation.
   def self.-(object)
     if object == Paper
       puts "Scissors cut Paper (winner Scissors)\n"
@@ -64,11 +92,18 @@ class Scissors
   end
 end
 
+# This class models in game behaviour of the Paper game object
 class Paper
+
+  # Method that evaluates the Paper object respect other
+  # object passed as an argument
   def self.evaluate(object)
     object == Spock || object == Rock
   end
 
+  # Method that defines the output string of the sum operation depending
+  # on the object that receives as argument, and then executes the the sum
+  # interpreter operation.
   def self.+(object)
     if object == Scissors
       puts "Scissors cut Paper (loser Paper)\n"
@@ -81,6 +116,9 @@ class Paper
     Sum.new(self, object).evaluate
   end
 
+  # Method that defines the output string of the subtraction operation depending
+  # on the object that receives as argument, and then executes the the subtraction
+  # interpreter operation.
   def self.-(object)
     if object == Rock
       puts "Paper covers Rock (winner Paper)\n"
@@ -93,12 +131,19 @@ class Paper
   end
 end
 
+# This class models in game behaviour of the Rock game object
 class Rock
+
+  # Method that evaluates the Rock object respect other
+  # object passed as an argument
   def self.evaluate(object)
     object == Scissors || object == Lizard
 
   end
 
+  # Method that defines the output string of the sum operation depending
+  # on the object that receives as argument, and then executes the the sum
+  # interpreter operation.
   def self.+(object)
     if object == Paper
       puts "Paper covers Rock (loser Rock)\n"
@@ -111,6 +156,9 @@ class Rock
     Sum.new(self, object).evaluate
   end
 
+  # Method that defines the output string of the subtraction operation depending
+  # on the object that receives as argument, and then executes the the subtraction
+  # interpreter operation.
   def self.-(object)
     if object == Lizard
       puts "Rock crushes Lizard (winner Rock)\n"
@@ -123,11 +171,18 @@ class Rock
   end
 end
 
+# This class models in game behaviour of the Lizard game object
 class Lizard
+
+  # Method that evaluates the Lizard object respect other
+  # object passed as an argument
   def self.evaluate(object)
     object == Spock || object == Paper
   end
 
+  # Method that defines the output string of the sum operation depending
+  # on the object that receives as argument, and then executes the the sum
+  # interpreter operation.
   def self.+(object)
     if object == Scissors
       puts "Scissors decapitate Lizard (loser Lizard)\n"
@@ -140,6 +195,9 @@ class Lizard
     Sum.new(self, object).evaluate
   end
 
+  # Method that defines the output string of the subtraction operation depending
+  # on the object that receives as argument, and then executes the the subtraction
+  # interpreter operation.
   def self.-(object)
     if object == Spock
       puts "Lizard poisons Spock (winner Lizard)\n"
@@ -153,11 +211,18 @@ class Lizard
   end
 end
 
+#This class models in game behaviour of the Spock game object
 class Spock
+
+  # Method that evaluates the Spock object respect other
+  # object passed as an argument
   def self.evaluate(object)
     object == Scissors || object == Rock
   end
 
+  # Method that defines the output string of the sum operation depending
+  # on the object that receives as argument, and then executes the the sum
+  # interpreter operation.
   def self.+(object)
     if object == Scissor
       puts "Spock smashes Scissors (winner Spock)\n"
@@ -170,6 +235,9 @@ class Spock
     Sum.new(self, object).evaluate
   end
 
+  # Method that defines the output string of the subtraction operation depending
+  # on the object that receives as argument, and then executes the the subtraction
+  # interpreter operation.
   def self.-(object)
     if object == Paper
       puts "Paper disproves Spock (loser Spock)\n "
