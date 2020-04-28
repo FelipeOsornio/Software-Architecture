@@ -41,23 +41,25 @@ class Scissors
 
   def self.+(object)
     if object == Paper
-      puts 'Scissors cut Paper (winner Scissors)'
+      puts "Scissors cut Paper (winner Scissors)\n"
     elsif object == Lizard
-      puts 'Scissors decapitate Lizard (winner Scissors)'
+      puts "Scissors decapitate Lizard (winner Scissors)\n"
     elsif object == Scissors
-      puts 'Scissors tie (winner Scissors)'
+      puts "Scissors tie (winner Scissors)\n"
     end
+
     Sum.new(self, object).evaluate
   end
 
   def self.-(object)
     if object == Spock
-      puts 'Spock smashes Scissors (loser Scissors)'
+      puts "Spock smashes Scissors (loser Scissors)\n"
     elsif object == Rock
-      puts 'Rock crushes Scissors (loser Scissors)'
+      puts "Rock crushes Scissors (loser Scissors)\n"
     elsif object == Scissors
-      puts 'Scissors tie (winner Scissors)'
+      puts "Scissors tie (winner Scissors)\n"
     end
+
     Subtraction.new(self, object).evaluate
   end
 end
@@ -69,23 +71,25 @@ class Paper
 
   def self.+(object)
     if object == Rock
-      puts 'Paper covers Rock (winner Paper)'
+      puts "Paper covers Rock (winner Paper)\n"
     elsif object == Spock
-      puts 'Paper disproves Spock (winner Paper)'
+      puts "Paper disproves Spock (winner Paper)\n"
     elsif object == Paper
-      puts 'Paper tie (winner Paper)'
+      puts "Paper tie (winner Paper)\n"
     end
+
     Sum.new(self, object).evaluate
   end
 
   def self.-(object)
     if object == Rock
-      puts 'Scissors cut Paper (loser Paper)'
+      puts "Scissors cut Paper (loser Paper)\n"
     elsif object == Spock
-      puts 'Lizard eats Paper (loser Paper)'
+      puts "Lizard eats Paper (loser Paper)\n"
     elsif object == Paper
-      puts 'Paper tie (winner Paper)'
+      puts "Paper tie (winner Paper)\n"
     end
+
     Subtraction.new(self, object).evaluate
   end
 end
@@ -98,23 +102,25 @@ class Rock
 
   def self.+(object)
     if object == Lizard
-      puts 'Rock crushes Lizard (winner Rock)'
+      puts "Rock crushes Lizard (winner Rock)\n"
     elsif object == Scissors
-      puts 'Rock crushes Scissors (winner Rock)'
+      puts "Rock crushes Scissors (winner Rock)\n"
     elsif object == Rock
-      puts 'Rock tie (winner Rock)'
+      puts "Rock tie (winner Rock)\n"
     end
+
     Sum.new(self, object).evaluate
   end
 
   def self.-(object)
     if object == Rock
-      puts 'Paper covers Rock (loser Rock)'
+      puts "Paper covers Rock (loser Rock)\n"
     elsif object == Scissors
-      puts 'Spock vaporizes Rock (loser Rock)'
+      puts "Spock vaporizes Rock (loser Rock)\n"
     elsif object == Rock
-      puts 'Rock tie (winner Rock)'
+      puts "Rock tie (winner Rock)\n"
     end
+
     Subtraction.new(self, object).evaluate
   end
 end
@@ -125,10 +131,26 @@ class Lizard
   end
 
   def self.+(object)
+    if object == Rock
+      puts "Rock crushes Lizard (winner Rock)\n"
+    elsif object == Scissors
+      puts "Scissors decapitate Lizard (winner Scissors)\n"
+    elsif object == Lizard
+      puts "Lizard tie (winner Lizard)\n"
+    end
+
     Sum.new(self, object).evaluate
   end
 
   def self.-(object)
+    if object == Spock
+      puts "Lizard poisons Spock (loser Spock)\n"
+    elsif object == Paper
+      puts "Lizard eats Paper (loser Paper)\n"
+    elsif object == Lizard
+      puts "Lizard tie (loser Lizard)\n"
+    end
+
     Subtraction.new(self, object).evaluate
   end
 end
@@ -140,18 +162,31 @@ class Spock
 
   def self.+(object)
     if object == Rock
-      'Spock vaporizes Rock (winner Spock)'
+      puts "Lizard poisons Spock (winner Lizard)\n"
+    elsif object == Paper
+      puts "Paper disproves Spock (winner Paper)\n"
+    elsif object == Spock
+      puts "Spock tie (winner Spock)\n"
     end
+
     Sum.new(self, object).evaluate
   end
 
   def self.-(object)
+    if object == Lizard
+      puts "Spock vaporizes Rock (loser Rock)\n"
+    elsif object == Scissors
+      puts "Spock smashes Scissors (loser Scissors)\n"
+    elsif object == Spock
+      puts "Spock tie (loser Spock)\n"
+    end
+
     Subtraction.new(self, object).evaluate
   end
 end
 
 def show(object)
-  puts "Result = #{object}"
+  puts "Result = #{object}\n"
 end
 
 
