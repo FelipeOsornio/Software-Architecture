@@ -131,10 +131,10 @@ class Lizard
   end
 
   def self.+(object)
-    if object == Rock
-      puts "Rock crushes Lizard (winner Rock)\n"
-    elsif object == Scissors
-      puts "Scissors decapitate Lizard (winner Scissors)\n"
+    if object == Spock
+      puts "Lizard poisons Spock (winner Lizard)\n"
+    elsif object == Paper
+      puts "Lizard eats Paper (winner Lizard)\n"
     elsif object == Lizard
       puts "Lizard tie (winner Lizard)\n"
     end
@@ -143,10 +143,10 @@ class Lizard
   end
 
   def self.-(object)
-    if object == Spock
-      puts "Lizard poisons Spock (loser Spock)\n"
-    elsif object == Paper
-      puts "Lizard eats Paper (loser Paper)\n"
+    if object == Scissors
+      puts "Scissors decapitate Lizard (loser Lizard)\n"
+    elsif object == Rock
+      puts "Rock crushes Lizard (loser Lizard)\n"
     elsif object == Lizard
       puts "Lizard tie (loser Lizard)\n"
     end
@@ -161,10 +161,10 @@ class Spock
   end
 
   def self.+(object)
-    if object == Rock
-      puts "Lizard poisons Spock (winner Lizard)\n"
-    elsif object == Paper
-      puts "Paper disproves Spock (winner Paper)\n"
+    if object == Scissor
+      puts "Spock smashes Scissors (winner Spock)\n"
+    elsif object == Rock
+      puts "Spock vaporizes Rock (winner Spock)\n"
     elsif object == Spock
       puts "Spock tie (winner Spock)\n"
     end
@@ -173,10 +173,10 @@ class Spock
   end
 
   def self.-(object)
-    if object == Lizard
-      puts "Spock vaporizes Rock (loser Rock)\n"
-    elsif object == Scissors
-      puts "Spock smashes Scissors (loser Scissors)\n"
+    if object == Paper
+      puts "Paper disproves Spock (loser Spock)\n"
+    elsif object == Lizard
+      puts "Lizard poisons Spock (loser Spock)\n"
     elsif object == Spock
       puts "Spock tie (loser Spock)\n"
     end
@@ -189,5 +189,6 @@ def show(object)
   puts "Result = #{object}\n"
 end
 
+show Spock - Lizard
 
 
