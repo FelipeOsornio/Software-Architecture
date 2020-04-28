@@ -253,6 +253,7 @@ class Spock
   end
 end
 
+# Method that shows the final result object
 def show(object)
   puts "Result = #{object}\n"
 end
